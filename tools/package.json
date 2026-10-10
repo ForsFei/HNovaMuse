@@ -1,0 +1,13 @@
+{
+  "name": "hnova-muse-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "离线测试素材生成器，不参与 Next.js 构建。",
+  "scripts": {
+    "make-test-song": "node make-test-song.mjs"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7"
+  }
+}

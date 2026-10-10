@@ -1,0 +1,36 @@
+{
+  "name": "hnova-muse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 43120",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1 --port 43120",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tonaljs/tonal": "^4.10.0",
+    "better-sqlite3": "^12.4.1",
+    "drizzle-orm": "^0.45.4",
+    "lucide-react": "^0.468.0",
+    "music-metadata": "^12.1.0",
+    "next": "^16.4.0",
+    "opensheetmusicdisplay": "^2.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "tone": "^15.1.22"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.4.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.0"
+  }
+}

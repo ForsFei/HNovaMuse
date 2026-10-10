@@ -1,0 +1,11 @@
+node_modules/
+.next/
+data/
+.env*
+!.env.example
+*.tsbuildinfo
+tools/node_modules/
+tools/test-song-cover.png
+task_plan.md
+progress.md
+findings.md
