@@ -20,8 +20,12 @@ export function listSongs(query = "") {
   const songIds = rows.map((row) => row.song.id);
   const allTags = songIds.length ? db.select({ songId: songTags.songId, name: tags.name }).from(songTags)
     .innerJoin(tags, eq(songTags.tagId, tags.id)).where(inArray(songTags.songId, songIds)).all() : [];
+  const allScores = songIds.length ? db.select({ songId: scores.songId }).from(scores).where(inArray(scores.songId, songIds)).all() : [];
+  const scoreCounts = new Map<number, number>();
+  for (const score of allScores) scoreCounts.set(score.songId, (scoreCounts.get(score.songId) || 0) + 1);
   return rows.map(({ song, artist, album }) => ({
     ...song, artist, album, tags: allTags.filter((tag) => tag.songId === song.id).map((tag) => tag.name),
+    scoreCount: scoreCounts.get(song.id) || 0,
     fileMissing: song.audioPath ? !fs.existsSync(song.audioPath) : false,
   }));
 }
